@@ -6,13 +6,14 @@
 function hacer(){
   console.log('fetch a fierce');
   fetch("https://fierce-woodland-51677.herokuapp.com/", {
-    headers: {
-      'Content-Type': 'application/json'
-    }
+    // headers: {
+    //   'Content-Type': 'application/json'
+    // }
   })
-  .then(res => res.json())
-  .then(res=>{console.log('res es:');console.log(res);return res;})
-  .catch(err => {console.log('en catch, err es:');console.log(err);return err})
+  // .then(res => res.json())
+  // .then(res=>{console.log('res es:');console.log(res);return res;})
+  // .catch(err => {console.log('en catch, err es:');console.log(err);return err})
+  .then(req => req.text()).then(res=>{console.log('res es:');console.log(res); return res;});
 }
 </script>
 </head>
