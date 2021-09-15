@@ -13,7 +13,9 @@ function hacer(){
   // .then(res => res.json())
   // .then(res=>{console.log('res es:');console.log(res);return res;})
   // .catch(err => {console.log('en catch, err es:');console.log(err);return err})
-  .then(req => req.text()).then(res=>{console.log('res es:');console.log(res); return res;});
+  .then(req => req.text())
+  .then(res=>{console.log('res es:');console.log(res); return res;})
+  .catch(err => {console.log('err es:');console.log(err);return err})
 }
 </script>
 </head>
