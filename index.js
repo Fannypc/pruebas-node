@@ -15,6 +15,16 @@ app.get('/',
   res.send('Hello World!')
 });
 
+app.get('/test',
+ rateLimiter(configLimiter({
+			points: 3,
+			duration: 60,
+			blockDuration: 20,
+		})),
+ (req, res) => {
+  res.sendFile('views/test.html', {root: __dirname})
+});
+
 app.listen(process.env.PORT || 8000, () => {
   console.log('Example app listening on port 8000!')
 });
